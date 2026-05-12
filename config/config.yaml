@@ -1,0 +1,14 @@
+extract:
+  file_type: csv
+  file_path: data/input/yellow_tripdata_2024-01.csv
+  chunk_size: 10000
+
+transform:
+  remove_duplicates: true
+  handle_missing: true
+  detect_outliers: true
+
+load:
+  database: mysql
+  connection_string: mysql+pymysql://root:gururajput@localhost:3306/pyflow
+  table_name: taxi_data
